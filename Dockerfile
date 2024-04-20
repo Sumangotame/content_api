@@ -17,9 +17,6 @@ COPY Gemfile Gemfile.lock ./
 # Install gems
 RUN bundle install
 
-# Copy the rest of the application code to the container
-COPY . .
-
 # Expose port 3000
 EXPOSE 3000
 
