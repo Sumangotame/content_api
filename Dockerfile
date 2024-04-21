@@ -2,7 +2,7 @@
 FROM ruby:2.7.8
 
 # Set up the working directory inside the container
-WORKDIR /app
+WORKDIR /rails-api
 
 # Install dependencies
 RUN apt-get update -qq && \
@@ -10,6 +10,9 @@ RUN apt-get update -qq && \
 
 # Install Rails 6.0.6.1
 RUN gem install rails -v 6.0.6.1
+
+#install bundler
+RUN gem install bundler
 
 # Copy Gemfile and Gemfile.lock to the container
 COPY Gemfile Gemfile.lock ./
